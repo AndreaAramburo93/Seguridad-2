@@ -1,11 +1,11 @@
-export function sanitizarEntrada(entrada) {
+export function sanitizarTexto(texto) {
   const mapa = {
-    "<": "&lt;",
-    ">": "&gt;",
-    "&": "&amp;",
-    '"': "&quot;",
-    "'": "&#x27;",
-    "/": "&#x2F;",
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#x27;',
+    "/": '&#x2F;',
   };
-  return entrada.replace(/[<>&"'/]/g, (match) => mapa[match]);
+  return texto.replace(/[&<>"'/]/g, (match) => mapa[match]);
 }
